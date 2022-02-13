@@ -1,0 +1,39 @@
+{
+  "name": "____",
+  "version": "0.0.1",
+  "description": "____",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "rollup": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/____/____.git"
+  },
+  "keywords": [
+    "",
+    ""
+  ],
+  "author": "____ <____>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/____/____/issues"
+  },
+  "homepage": "https://github.com/____/____#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "rollup": "^2.66.1",
+    "rollup-plugin-dts": "^4.1.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5"
+  }
+}
