@@ -1,9 +1,8 @@
-## 0.0.1 (January 1, 2022)
+## 0.1.0 (February 19, 2022)
 
-### Release 0.0.1
+### Release 0.1.0
 
-- Fixed:
-  - .
+- Released:
   - .
 
 ---
