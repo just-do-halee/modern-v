@@ -1,5 +1,5 @@
 {
-  "name": "getmode",
+  "name": "modern-v",
   "version": "0.1.0",
   "description": "Most easy way to get and set the mode in any situation.",
   "main": "dist/cjs/index.js",
@@ -15,29 +15,27 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/getmode/getmode.git"
+    "url": "git+https://github.com/modern-v/modern-v.git"
   },
   "keywords": [
     "env",
     "mode",
     "simple",
-    "flexible",
-    "javascript",
     "typescript",
-    "nodejs",
     "NODE_ENV",
     "development",
     "production",
     "test",
     "application",
+    "configuration",
     "config"
   ],
   "author": "just-do-halee <just.do.halee@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/getmode/getmode/issues"
+    "url": "https://github.com/modern-v/modern-v/issues"
   },
-  "homepage": "https://github.com/getmode/getmode#readme",
+  "homepage": "https://github.com/modern-v/modern-v#readme",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.3",

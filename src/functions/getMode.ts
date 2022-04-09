@@ -1,16 +1,4 @@
-export const ENV = process?.env;
-
-export const { NODE_ENV } = ENV;
-
-export const DEFAULT_VARIABLE = NODE_ENV;
-
-export type DefaultMode = 'dev' | 'test' | 'prod';
-
-export const DEFAULT_MODE_LIST: Array<DefaultMode & string> = [
-  'dev',
-  'test',
-  'prod',
-];
+import { DEFAULT_VARIABLE, DEFAULT_MODE_LIST, DefaultMode } from './env';
 
 export type GetModeOptions<T extends string> = {
   list?: Array<T>;
@@ -27,9 +15,9 @@ export type GetModeOptions<T extends string> = {
  *                - }
  * @returns `variable` || `list[0]`
  */
-const getMode = <T extends string = DefaultMode>(
+function getMode<T extends string = DefaultMode>(
   options: GetModeOptions<T> = {}
-): T => {
+): T {
   const {
     list = DEFAULT_MODE_LIST as Array<T>,
     variable = DEFAULT_VARIABLE,
@@ -55,6 +43,6 @@ const getMode = <T extends string = DefaultMode>(
     //
     return list[0];
   }
-};
+}
 
 export default getMode;
