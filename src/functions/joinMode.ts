@@ -29,13 +29,17 @@ function joinMode<
   let mergedObj: ObjectOnly<string> = { __MODE__: mode };
 
   for (const key in obj) {
-    if (isPreservedKey(key)) continue;
-
+    
     let value = obj[key] === '' ? key : obj[key];
 
-    mergedObj[key] = prefix
-      ? `${mode}${delimiter}${value}`
-      : `${value}${delimiter}${mode}`;
+    if (isPreservedKey(key)) {
+      mergedObj[key] = value;
+    } else {
+      mergedObj[key] = prefix
+        ? `${mode}${delimiter}${value}`
+        : `${value}${delimiter}${mode}`;
+    }
+
   }
 
   return mergedObj as JoinedObject<M, O, Prefix> & { __MODE__: M };
