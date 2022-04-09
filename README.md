@@ -203,9 +203,9 @@ console.assert(
 
 [MIT](LICENSE)
 
-[npm-image]: https://img.shields.io/npm/v/getmode.svg
-[npm-url]: https://npmjs.org/package/getmode
-[downloads-image]: https://img.shields.io/npm/dm/getmode.svg
-[downloads-url]: https://npmcharts.com/compare/getmode?minimal=true
+[npm-image]: https://img.shields.io/npm/v/modern-v.svg
+[npm-url]: https://npmjs.org/package/modern-v
+[downloads-image]: https://img.shields.io/npm/dm/modern-v.svg
+[downloads-url]: https://npmcharts.com/compare/modern-v?minimal=true
 [license-url]: https://opensource.org/licenses/MIT
-[license-image]: https://img.shields.io/npm/l/getmode
+[license-image]: https://img.shields.io/npm/l/modern-v
