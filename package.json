@@ -1,6 +1,6 @@
 {
   "name": "modern-v",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Most easy way to get and set the mode in any situation.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/modern-v/modern-v.git"
+    "url": "git+https://github.com/just-do-halee/modern-v.git"
   },
   "keywords": [
     "env",
@@ -33,9 +33,9 @@
   "author": "just-do-halee <just.do.halee@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/modern-v/modern-v/issues"
+    "url": "https://github.com/just-do-halee/modern-v/issues"
   },
-  "homepage": "https://github.com/modern-v/modern-v#readme",
+  "homepage": "https://github.com/just-do-halee/modern-v#readme",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.3",
