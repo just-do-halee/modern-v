@@ -19,15 +19,16 @@ function getEnvs<O extends ObjectStringOnly<string>, K extends ExceptKeys<O>>(
   /* + omit preserved key */
 ): OmitKeys<O, typeof exceptKeys> {
   let mergedObj: ObjectStringOnly<string> = {};
+
   for (const key in obj) {
     if (isPreservedKey(key)) continue;
     if (exceptKeys && exceptKeys.includes(key as never)) continue;
 
-    const value = ENV[key];
+    const value = ENV[obj[key]];
 
     if (value === undefined) {
       // strict mode
-      if (strict) throw new Error(`ENV:[${ENV}] not includes key:${key}`);
+      if (strict) throw new Error(`ENV:[${ENV}] not includes key:${obj[key]}`);
       continue;
     }
 
