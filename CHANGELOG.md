@@ -1,3 +1,12 @@
+## 0.1.6 (May 10, 2022)
+
+### Release 0.1.6
+
+- Fixed:
+  - building
+
+---
+
 ## 0.1.5 (May 9, 2022)
 
 ### Release 0.1.5
