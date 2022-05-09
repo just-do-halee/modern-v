@@ -1,6 +1,6 @@
-import { ObjectStringOnly, PreservedKey, PreservedKeyExcluded } from '../types';
-import { isPreservedKey } from './tools';
-import { ENV } from './env';
+import { ObjectStringOnly, PreservedKey, PreservedKeyExcluded } from "../types";
+import { isPreservedKey } from "./tools";
+import { ENV } from "./env";
 
 type ExceptKeys<O> = Array<PreservedKeyExcluded<O>> | [] | undefined;
 
@@ -24,7 +24,7 @@ function getEnvs<O extends ObjectStringOnly<string>, K extends ExceptKeys<O>>(
     if (isPreservedKey(key)) continue;
     if (exceptKeys && exceptKeys.includes(key as never)) continue;
 
-    const value = ENV[obj[key]];
+    const value = ENV[obj[key] === "" ? key : obj[key]];
 
     if (value === undefined) {
       // strict mode

@@ -1,5 +1,5 @@
-import { ObjectOnly } from '../types';
-import { isPreservedKey } from './tools';
+import { ObjectOnly } from "../types";
+import { isPreservedKey } from "./tools";
 
 export type JoinedObject<
   M extends string,
@@ -23,14 +23,13 @@ function joinMode<
   obj: O,
   options: JoinModeOptions<Prefix> = {}
 ): JoinedObject<M, O, Prefix> & { __MODE__: M } {
-  if (typeof mode !== 'string') throw new Error(`The mode must be a string.`);
-  const { prefix = false, delimiter = '' } = options;
+  if (typeof mode !== "string") throw new Error(`The mode must be a string.`);
+  const { prefix = false, delimiter = "" } = options;
 
   let mergedObj: ObjectOnly<string> = { __MODE__: mode };
 
   for (const key in obj) {
-    
-    let value = obj[key] === '' ? key : obj[key];
+    let value = obj[key] === "" ? key : obj[key];
 
     if (isPreservedKey(key)) {
       mergedObj[key] = value;
@@ -39,7 +38,6 @@ function joinMode<
         ? `${mode}${delimiter}${value}`
         : `${value}${delimiter}${mode}`;
     }
-
   }
 
   return mergedObj as JoinedObject<M, O, Prefix> & { __MODE__: M };

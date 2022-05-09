@@ -1,3 +1,12 @@
+## 0.1.5 (May 9, 2022)
+
+### Release 0.1.5
+
+- Fixed:
+  - getEnvs: no value can be extracted as key.
+
+---
+
 ## 0.1.4 (April 10, 2022)
 
 ### Release 0.1.4
