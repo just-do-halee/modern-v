@@ -21,6 +21,29 @@ yarn add modern-v
 
 <br>
 
+#### **_`Idiom` :_**
+
+```typescript
+const mode = getMode({ strict: true }); // dev | test | prod
+
+const joined = joinMode(mode, {
+  env: ".env.",
+}); // .env.dev | .dev.test | .dev.prod
+
+const envs = getEnvs({
+  FOO: "",
+  BAR: "",
+}); // extracting process.env...
+
+export const config = {
+  mode,
+  joined,
+  envs,
+};
+```
+
+<br>
+
 ## **_`Examples`_**
 
 ---
@@ -28,7 +51,7 @@ yarn add modern-v
 ###### _\* Defaults:_
 
 ```typescript
-import { getMode } from 'modern-v';
+import { getMode } from "modern-v";
 
 const MODE = getMode(); // Type <=> 'dev' | 'test' | 'prod' from NODE_ENV
 
@@ -38,10 +61,10 @@ const MODE = getMode(); // Type <=> 'dev' | 'test' | 'prod' from NODE_ENV
 ###### _\* Options:_
 
 ```typescript
-import { getMode, ENV } from 'modern-v';
+import { getMode, ENV } from "modern-v";
 
 const MODE = getMode({
-  list: ['development', 'debug', 'production'],
+  list: ["development", "debug", "production"],
   variable: ENV.MY_ENV, // <== Target
   strict: true, // <== If the Target is not included in the list, throw an error
 });
@@ -60,14 +83,14 @@ const MODE = getMode({
 ###### _\* Defaults:_
 
 ```typescript
-import { getMode, joinMode } from 'modern-v';
+import { getMode, joinMode } from "modern-v";
 
 // if getMode() === 'dev'
 
 const config = joinMode(getMode(), {
-  env: '.env.',
-  host_: '',
-  port_: '',
+  env: ".env.",
+  host_: "",
+  port_: "",
 } as const);
 
 /*
@@ -82,19 +105,19 @@ const config = joinMode(getMode(), {
 ###### _\* Options:_
 
 ```typescript
-import { getMode, joinMode } from 'modern-v';
+import { getMode, joinMode } from "modern-v";
 
 // if getMode() === 'dev'
 
 const config = joinMode(
-  '.' + getMode(),
+  "." + getMode(),
 
   {
-    env: '',
-    __HOST__: 'localhost', // __NAME__ will be preserved as same state
+    env: "",
+    __HOST__: "localhost", // __NAME__ will be preserved as same state
   } as const,
 
-  { prefix: true, delimiter: '_' }
+  { prefix: true, delimiter: "_" }
 );
 
 /*
@@ -114,15 +137,15 @@ const config = joinMode(
 ###### _\* Defaults:_
 
 ```typescript
-import { getMode, joinMode, getEnvs } from 'modern-v';
+import { getMode, joinMode, getEnvs } from "modern-v";
 
 // if getMode() === 'dev'
 
 const envs = getEnvs(
   joinMode(getMode(), {
-    host: 'DB_HOST_',
-    port: 'DB_PORT_',
-    __FOO__: 'bar', // __NAME__ ignored
+    host: "DB_HOST_",
+    port: "DB_PORT_",
+    __FOO__: "bar", // __NAME__ ignored
   } as const)
 );
 
@@ -137,20 +160,20 @@ const envs = getEnvs(
 ###### _\* Options:_
 
 ```typescript
-import { getMode, joinMode, getEnvs } from 'modern-v';
+import { getMode, joinMode, getEnvs } from "modern-v";
 
 // if getMode() === 'dev'
 
 const envs = getEnvs(
   joinMode(getMode(), {
-    env: '.env.',
-    bar_: 'foo-foo-',
-    host: 'DB_HOST_',
-    port: 'DB_PORT_',
-    __FOO__: 'bar', // __NAME__ ignored
+    env: ".env.",
+    bar_: "foo-foo-",
+    host: "DB_HOST_",
+    port: "DB_PORT_",
+    __FOO__: "bar", // __NAME__ ignored
   } as const),
   {
-    exceptKeys: ['env', 'bar_'],
+    exceptKeys: ["env", "bar_"],
     strict: true,
   }
 );
@@ -170,7 +193,7 @@ const envs = getEnvs(
 ---
 
 ```typescript
-import { NODE_ENV, DEFAULT_VARIABLE } from 'modern-v';
+import { NODE_ENV, DEFAULT_VARIABLE } from "modern-v";
 
 console.assert(NODE_ENV === process?.env?.NODE_ENV);
 
@@ -178,13 +201,13 @@ console.assert(DEFAULT_VARIABLE === NODE_ENV);
 ```
 
 ```typescript
-import { DEFAULT_MODE_LIST } from 'modern-v';
+import { DEFAULT_MODE_LIST } from "modern-v";
 
-console.assert(DEFAULT_MODE_LIST === ['dev', 'test', 'prod']);
+console.assert(DEFAULT_MODE_LIST === ["dev", "test", "prod"]);
 ```
 
 ```typescript
-import { getMode, DEFAULT_MODE_LIST, DEFAULT_VARIABLE } from 'modern-v';
+import { getMode, DEFAULT_MODE_LIST, DEFAULT_VARIABLE } from "modern-v";
 
 console.assert(
   getMode({

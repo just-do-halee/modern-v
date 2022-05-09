@@ -1,6 +1,6 @@
 {
   "name": "modern-v",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Most easy way to get and set the mode in any situation.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

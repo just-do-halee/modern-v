@@ -13,9 +13,12 @@ type OmitKeys<
   ? O
   : Omit<O, NonNullable<K>[number] | PreservedKey>;
 
-function getEnvs<O extends ObjectStringOnly<string>, K extends ExceptKeys<O>>(
+function getEnvs<
+  O extends ObjectStringOnly<string>,
+  K extends ExceptKeys<O> = []
+>(
   obj: O,
-  { exceptKeys, strict = false }: { exceptKeys?: K; strict?: boolean } = {}
+  { exceptKeys = [], strict = false }: { exceptKeys?: K; strict?: boolean } = {}
   /* + omit preserved key */
 ): OmitKeys<O, typeof exceptKeys> {
   let mergedObj: ObjectStringOnly<string> = {};

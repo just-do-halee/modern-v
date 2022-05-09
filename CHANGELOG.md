@@ -1,9 +1,18 @@
+## 0.1.7 (May 10, 2022)
+
+### Release 0.1.7
+
+- Fixed:
+  - getEnvs: type infer.
+
+---
+
 ## 0.1.6 (May 10, 2022)
 
 ### Release 0.1.6
 
 - Fixed:
-  - building
+  - building.
 
 ---
 
